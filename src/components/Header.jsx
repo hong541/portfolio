@@ -12,7 +12,6 @@ function Header() {
             Hong<span className="text-prime">.</span>
           </h1>
         </Link>
-
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
           <Nav />

@@ -13,6 +13,9 @@ import {
   SiNextdotjs,
   SiMongodb,
   SiExpress,
+  SiSupabase,
+  SiHeroku,
+  SiRadixui,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 // About Data
@@ -107,14 +110,14 @@ const education = {
     "I completed my studies with a strong academic background in tech-related fields.",
   items: [
     {
-      institution: "Online Course",
-      degree: "Programming Course",
-      duration: "2023",
+      institution: "WPU Course",
+      degree: "MERN Stack Learn",
+      duration: "2025",
     },
     {
-      institution: "Online Course Platform",
-      degree: "Full Stack Web Development",
-      duration: "2022",
+      institution: "WPU Course",
+      degree: "Full Stack Next JS : Realtime Point Of Sale Apps",
+      duration: "2025",
     },
     {
       institution: "Codeacademy",
@@ -169,8 +172,20 @@ const skills = {
       name: "MongoDB",
     },
     {
+      icon: <SiSupabase />,
+      name: "Supabase",
+    },
+    {
       icon: <SiTailwindcss />,
       name: "Tailwind CSS",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "Tailwind CSS",
+    },
+    {
+      icon: <SiRadixui />,
+      name: "Radix UI",
     },
     {
       icon: <TbBrandReactNative />,
