@@ -26,7 +26,7 @@ const Photo = () => {
             priority
             quality={100}
             fill
-            className="object-contain rounded-full shadow-md"
+            className=" object-contain bg-[#0c0e0d] rounded-full shadow-md"
           />
         </motion.div>
       </motion.div>

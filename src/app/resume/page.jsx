@@ -14,13 +14,19 @@ import {
   SiMongodb,
   SiExpress,
   SiSupabase,
-  SiHeroku,
   SiRadixui,
+  SiTypescript,
+  SiAxios,
+  SiVercel,
+  SiGithub,
 } from "react-icons/si";
+import { MdPayments } from "react-icons/md";
+
 import { TbBrandReactNative } from "react-icons/tb";
 // About Data
 
 const about = {
+  icon: "/assets/resume/about.svg",
   title: "About Me",
   description:
     "I am a passionate web developer with a keen interest in creating dynamic and responsive web applications. I have experience in various technologies and frameworks, and I am always eager to learn more.",
@@ -112,17 +118,17 @@ const education = {
     {
       institution: "WPU Course",
       degree: "MERN Stack Learn",
-      duration: "2025",
+      duration: "September 2025",
     },
     {
       institution: "WPU Course",
       degree: "Full Stack Next JS : Realtime Point Of Sale Apps",
-      duration: "2025",
+      duration: "September 2025",
     },
     {
-      institution: "Codeacademy",
-      degree: "Front-end Track",
-      duration: "2022",
+      institution: "Dibimbing",
+      degree: "DSF-38-Front-end",
+      duration: "Mei 2025",
     },
     {
       institution: "Universitas Terbuka",
@@ -132,10 +138,106 @@ const education = {
   ],
 };
 
+// Certificate Data
+const certificates = {
+  title: "My Certificate",
+  icon: "/assets/resume/license.svg",
+  description: "I attach some certificates of my educational results.",
+  items: [
+    {
+      title: "Learn MERN Stack",
+      image: "/assets/certificates/certificate-1.png",
+      institution: "WPU Course",
+      tech: [
+        {
+          icon: <FaReact />,
+          name: "React",
+        },
+        {
+          icon: <SiTypescript />,
+          name: "Typescript",
+        },
+        {
+          icon: <SiNextdotjs />,
+          name: "Next",
+        },
+        {
+          icon: <SiTailwindcss />,
+          name: "Tailwind CSS",
+        },
+        {
+          icon: <FaNodeJs />,
+          name: "Node.JS",
+        },
+        {
+          icon: <SiExpress />,
+          name: "Express",
+        },
+        {
+          icon: <SiMongodb />,
+          name: "MongoDB",
+        },
+        {
+          icon: <SiAxios />,
+          name: "Axios",
+        },
+        {
+          icon: <MdPayments />,
+          name: "Midtrans",
+        },
+      ],
+    },
+    {
+      title: "POS Realtime",
+      image: "/assets/certificates/certificate-2.png",
+      institution: "WPU Course",
+      tech: [
+        {
+          icon: <FaReact />,
+          name: "React",
+        },
+        {
+          icon: <SiTypescript />,
+          name: "Typescript",
+        },
+        {
+          icon: <SiNextdotjs />,
+          name: "Next",
+        },
+        {
+          icon: <SiTailwindcss />,
+          name: "Tailwind CSS",
+        },
+        {
+          icon: <FaNodeJs />,
+          name: "Node.JS",
+        },
+        {
+          icon: <SiExpress />,
+          name: "Express",
+        },
+        {
+          icon: <SiSupabase />,
+          name: "Supabase",
+        },
+        {
+          icon: <SiAxios />,
+          name: "Axios",
+        },
+        {
+          icon: <MdPayments />,
+          name: "Midtrans",
+        },
+      ],
+    },
+  ],
+};
+
 // Skills Data
 
 const skills = {
   title: "My Skills",
+  icon: "/assets/resume/skills.svg",
   description:
     "Proficient in web development, UI/UX, mobile apps, and SEO optimization tools.",
   skillList: [
@@ -180,8 +282,16 @@ const skills = {
       name: "Tailwind CSS",
     },
     {
-      icon: <SiTailwindcss />,
-      name: "Tailwind CSS",
+      icon: <SiTypescript />,
+      name: "Typescript",
+    },
+    {
+      icon: <SiVercel />,
+      name: "Vercel",
+    },
+    {
+      icon: <SiGithub />,
+      name: "Github",
     },
     {
       icon: <SiRadixui />,
@@ -210,6 +320,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Resume = () => {
   return (
@@ -227,6 +338,7 @@ const Resume = () => {
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="certificate">Certificate</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="aboutme">About Me</TabsTrigger>
           </TabsList>
@@ -238,7 +350,13 @@ const Resume = () => {
               value="experience"
               className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <h3 className="text-4xl font-bold flex gap-2 items-center">
+                  <img
+                    src={experience.icon}
+                    alt="icon"
+                  />
+                  {experience.title}
+                </h3>
                 <p className="max-w-[600px] text-textLight/60 mx-auto xl:mx-0">
                   {experience.description}
                 </p>
@@ -270,7 +388,13 @@ const Resume = () => {
               value="education"
               className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <h3 className="text-4xl font-bold flex gap-2 items-center">
+                  <img
+                    src={education.icon}
+                    alt="icon"
+                  />
+                  {education.title}
+                </h3>
                 <p className="max-w-[600px] text-textLight/60 mx-auto xl:mx-0">
                   {education.description}
                 </p>
@@ -299,13 +423,90 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+            {/*Certificate */}
+            <TabsContent
+              value="certificate"
+              className="w-full h-full">
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold flex gap-2 items-center">
+                  <img
+                    src={certificates.icon}
+                    alt="icon"
+                    height={64}
+                    width={64}
+                    className="text-green-400"
+                  />
+                  {certificates.title}
+                </h3>
+                <p className="max-w-[600px] text-textLight/60 mx-auto xl:mx-0">
+                  {certificates.description}
+                </p>
+                <ScrollArea className="h-full">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {certificates.items.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="bg-[#e1e1e1] h-full py-6 px-10 rounded-xl flex flex-col justify-start items-center lg:items-start gap-4">
+                          {/* Gambar */}
+                          <Image
+                            src={item.image}
+                            alt=""
+                            width={200}
+                            height={200}
+                            className="w-full h-auto object-cover"
+                          />
+
+                          {/* Institusi */}
+                          <div className="flex items-center gap-2">
+                            <span className="w-[6px] h-[6px] rounded-full bg-second"></span>
+                            <p className="text-textLight/80">
+                              {item.institution}
+                            </p>
+                          </div>
+
+                          {/* Tech list */}
+                          <h1 className="text-md font-semibold">Stack:</h1>
+                          <div className="grid grid-cols-3 gap-4 w-full">
+                            {item.tech.map((e, index) => (
+                              <TooltipProvider
+                                key={index}
+                                delayDuration={100}>
+                                <Tooltip>
+                                  <TooltipTrigger className="bg-[#e4e4e4] rounded-xl flex justify-center items-center group p-2">
+                                    <div className="text-6xl group-hover:text-second transition-all duration-300">
+                                      {e.icon}
+                                    </div>
+                                  </TooltipTrigger>
+                                  <TooltipContent className="text-sm font-semibold">
+                                    <p className="capitalize">{e.name}</p>
+                                  </TooltipContent>
+                                </Tooltip>
+                              </TooltipProvider>
+                            ))}
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
             {/* Skills */}
             <TabsContent
               value="skills"
               className="w-full h-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <h3 className="text-4xl font-bold flex gap-2 items-center">
+                    <img
+                      src={skills.icon}
+                      alt="icon"
+                      height={64}
+                      width={64}
+                    />
+                    {skills.title}
+                  </h3>
                   <p className="max-w-[600px] text-textLight/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
@@ -335,9 +536,17 @@ const Resume = () => {
             {/* About Me */}
             <TabsContent
               value="aboutme"
-              className="w-full text-center xl:text-left">
+              className="w-full h-full text-center xl:text-left">
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <h3 className="text-4xl font-bold flex gap-2 items-center">
+                  <img
+                    src={about.icon}
+                    alt="icon"
+                    height={64}
+                    width={64}
+                  />
+                  {about.title}
+                </h3>
                 <p className="max-w-[600px] text-textLight/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>

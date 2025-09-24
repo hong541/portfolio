@@ -20,29 +20,43 @@ import WorkSliderBtn from "@/components/WorkSliderBtn";
 const projects = [
   {
     num: "01",
-    category: "Front-end",
+    category: "Event Management System",
     title: "Project 1",
     description:
-      "Fully responsive website with clean layout, optimized performance, and dynamic interactive elements.",
-    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
-    image: "/assets/work/1.png",
-    live: " https://hong541.github.io/Project-1/",
-    github: "",
+      "A modern event management platform built with the MERN Stack (MongoDB, Express.js, React, Node.js) This project was developed to streamline how organizers manage events covering everything from ticketing and event categories to payments and participant data in a seamless workflow.",
+    stack: [
+      { name: "React" },
+      { name: "Next" },
+      { name: "Typescript" },
+      { name: "Tailwind" },
+      { name: "Express" },
+      { name: "MongoDB" },
+      { name: "Node" },
+      { name: "Midtrans" },
+    ],
+    image: "/assets/work/work-1.png",
+    live: "https://front-end-acara-livid.vercel.app/",
+    github: "https://github.com/hong541",
   },
   {
     num: "02",
-    category: "UI/UX",
+    category: "Full Stack Next JS : Realtime Point Of Sale Apps",
     title: "Project 2",
     description:
-      "Smooth user experience with modern design system and intuitive interface for seamless user interaction.",
+      "This Realtime POS Application is more than just a cash register system — it is a dynamic, cloud-powered solution built with Supabase that transforms the way businesses handle transactions. With seamless real-time updates, smart inventory tracking, and secure authentication, this project showcases not only my technical ability to build full-stack applications, but also my passion for creating scalable, modern solutions that deliver immediate impact.",
     stack: [
-      { name: "HTML 5" },
-      { name: "Materialize CSS" },
-      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Next" },
+      { name: "Typescript" },
+      { name: "Tailwind" },
+      { name: "Express" },
+      { name: "Supabase" },
+      { name: "Node" },
+      { name: "Midtrans" },
     ],
-    image: "/assets/work/2.png",
-    live: "https://hong541.github.io/Project-3/",
-    github: "",
+    image: "/assets/work/work-2.png",
+    live: "https://hongcafe.vercel.app/",
+    github: "https://github.com/hong541",
   },
   {
     num: "03",
@@ -53,7 +67,7 @@ const projects = [
     stack: [{ name: "Next.js" }, { name: "Tailwind CSS" }],
     image: "/assets/work/thumb3.png",
     live: "",
-    github: "",
+    github: "https://github.com/hong541",
   },
 ];
 
@@ -88,7 +102,7 @@ const Work = () => {
               {/* Project Description */}
               <p className="text-textLight/60">{project.description}</p>
               {/* Project Stack */}
-              <ul className="flex gap-4">
+              <ul className="flex gap-2">
                 {project.stack.map((item, index) => (
                   <li
                     key={index}
@@ -143,15 +157,15 @@ const Work = () => {
                   <SwiperSlide
                     key={index}
                     className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 rounded-xl">
                       {/* Overlay */}
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       {/* Image */}
-                      <div className="w-full h-full relative">
+                      <div className="w-full h-full relative rounded-xl">
                         <Image
                           src={project.image}
                           fill
-                          className="object-cover"
+                          className="object-fit"
                           alt=""
                         />
                       </div>
@@ -161,8 +175,8 @@ const Work = () => {
               })}
               {/* Slider Button */}
               <WorkSliderBtn
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] z-20 xl:bottom-0 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-second hover:bg-second-hover text-textLight text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] z-20 xl:bottom-0 w-full justify-between"
+                btnStyles="bg-second hover:bg-second-hover text-textLight text-[22px] w-[44px] h-[44px] flex justify-center rounded-xl items-center transition-all"
               />
             </Swiper>
           </div>
